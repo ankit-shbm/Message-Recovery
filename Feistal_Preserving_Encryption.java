@@ -12,7 +12,8 @@ class Simple
       int i;
       int m;                                                                                        /* Nos. of rounding to be done. */
       System.Stdln.Input(m);
-      
+
+      / *** String Parsing in Right Encrypted and LeftEncrypted. ***/
       
       for(i = 0; i < m; i++)
       {                                                                         
