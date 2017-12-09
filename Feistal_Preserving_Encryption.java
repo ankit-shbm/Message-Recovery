@@ -16,11 +16,11 @@ class Simple
       {                                                                         
         if(i%2 == 0)
         {
-          LeftEncrypted = XOR(LeftEncrypted, function(key, tweak, i, RightEncrypted);               /* Each Round new function Generation. */
+          LeftEncrypted = XOR(LeftEncrypted, function(key, tweak, i, RightEncrypted));               /* Each Round new function Generation with respect to RightEncrypted. */
         }
         else
         {
-          function(key, tweak, i, LeftEncrypted);                                      /* Each Round new function Generation. */                                        
+          RightEncrypted = XOR(RightEncrypted, function(key, tweak, i, LeftEncrypted));                /* Each Round new function Generation with respect to LeftEncrypted.. */                                        
         }
       }     
    }
