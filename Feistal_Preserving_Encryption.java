@@ -12,15 +12,19 @@ class Simple
       int i;
       int m;                                                                                        /* Nos. of rounding to be done. */
       System.Stdln.Input(m);
+      
+      
       for(i = 0; i < m; i++)
       {                                                                         
         if(i%2 == 0)
         {
-          LeftEncrypted = XOR(LeftEncrypted, function(key, tweak, i, RightEncrypted));               /* Each Round new function Generation with respect to RightEncrypted. */
+          LeftEncrypted[i + 1] = XOR(LeftEncrypted[i], function(key, tweak, i, RightEncrypted[i]));               /* Each Round new function Generation with respect to RightEncrypted. */
+          RightEncrypted[i + 1] = RightEncrypted[i];
         }
         else
         {
-          RightEncrypted = XOR(RightEncrypted, function(key, tweak, i, LeftEncrypted));                /* Each Round new function Generation with respect to LeftEncrypted.. */                                        
+          RightEncrypted[i + 1] = XOR(RightEncrypted[i], function(key, tweak, i, LeftEncrypted[i]));               /* Each Round new function Generation with respect to LeftEncrypted.. */                                        
+          LeftEncrypted[i + 1] = LeftEncrypted[i];
         }
       }     
    }
