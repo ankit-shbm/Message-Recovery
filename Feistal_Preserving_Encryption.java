@@ -2,7 +2,7 @@
 
 class Simple
 {
-   public class function(uint64_t key[], uint64_t tweak[], int m)
+   public class function(uint64_t key[], uint64_t tweak[], int i)
    {
      
    }
@@ -13,9 +13,15 @@ class Simple
       int m;                                                                                        /* Nos. of rounding to be done. */
       System.Stdln.Input(m);
       for(i = 0; i < m; i++)
-      {
-        function(key, tweak, m);
-        
+      {                                                                         
+        if(i%2 == 0)
+        {
+          function(key, tweak, i, RightEncrypted);                                     /* Each Round new function Generation. */
+        }
+        else
+        {
+          function(key, tweak, i, LeftEncrypted);                                      /* Each Round new function Generation. */                                        
+        }
       }     
    }
    
