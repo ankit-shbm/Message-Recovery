@@ -7,7 +7,7 @@ class Simple
      
    }
    
-   public static void EncryptedNumber(int A[], int n, uint64_t key[], uint64_t tweak[])             /* A[] is input bit-string.*/
+   public class EncryptedNumber(int A[], int n, uint64_t key[], uint64_t tweak[])             /* A[] is input bit-string.*/
    {                                                                   
       int i;
       int m;                                                                                        /* Nos. of rounding to be done. */
