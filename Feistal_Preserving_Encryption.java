@@ -2,7 +2,7 @@
 
 class Simple
 {
-   public class function(uint64_t key[], uint64_t tweak[], int i)
+   public class function(uint64_t key[], uint64_t tweak[], int i, int n, uint64_t EncryptedSide)
    {
      
    }
@@ -18,12 +18,12 @@ class Simple
       {                                                                         
         if(i%2 == 0)
         {
-          LeftEncrypted[i + 1] = XOR(LeftEncrypted[i], function(key, tweak, i, RightEncrypted[i]));               /* Each Round new function Generation with respect to RightEncrypted. */
+          LeftEncrypted[i + 1] = XOR(LeftEncrypted[i], function(key, tweak, i, n, RightEncrypted[i]));               /* Each Round new function Generation with respect to RightEncrypted. */
           RightEncrypted[i + 1] = RightEncrypted[i];
         }
         else
         {
-          RightEncrypted[i + 1] = XOR(RightEncrypted[i], function(key, tweak, i, LeftEncrypted[i]));               /* Each Round new function Generation with respect to LeftEncrypted.. */                                        
+          RightEncrypted[i + 1] = XOR(RightEncrypted[i], function(key, tweak, i, n, LeftEncrypted[i]));               /* Each Round new function Generation with respect to LeftEncrypted.. */                                        
           LeftEncrypted[i + 1] = LeftEncrypted[i];
         }
       }     
