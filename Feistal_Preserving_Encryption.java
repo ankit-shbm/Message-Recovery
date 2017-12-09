@@ -7,8 +7,8 @@ class Simple
      int A[16];
      int n;
      System.in.println(n);
-     uint64_t key[n] ; 
-     uint64_t tweak[n];
+     uint64_t key[128] ; 
+     uint64_t tweak[128];
      EncryptedNumber(A, n, key, tweak);
    }
    public static void EncryptedNumber(int A[], int n)             /* A[] is input bit-string.*/
