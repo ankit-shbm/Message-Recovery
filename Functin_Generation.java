@@ -57,7 +57,7 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
          }
    
       count = 0;
-      padding_2 = strlen(tweak) / n;                              /* To know the Multiple of n for Function generation. */
+      padding_2 = strlen(tweak) / n;                         /* To know the Multiple of n for Function generation. */
       padding2 = strlen(tweak) % n;
    
       if(strlen(tweak) > n)
@@ -82,5 +82,19 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
         }
    
      int d1, d2;
-     
+     if(padding_1 < padding_2)                         /* tweak-multiple bigger than oe equal to EncryptedSide-multiple. */
+       {
+           if(padding_ > padding_2)
+           {
+           
+           }
+          else
+          {
+          
+          }
+       }
+     else if(padding_1 >= padding_2)                     /* Reverse case; padding_ > padding_2.*/
+       {
+          
+       }
    }
