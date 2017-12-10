@@ -3,7 +3,7 @@
 /* Max. len(PlainText) = 128 Bits. */
 /* Max. len(key) = 128 Bits. */
 
-public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t EncryptedSide, int BlockSize)
+public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t EncryptedSide, int BlockSize)
    {
       int i, padding, padding_, padding1, padding_1, padding2, padding_2;                                  
       uint64_t key1[n], key2[n];                                /* String store. */
@@ -84,17 +84,17 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
      int d1, d2;
      if(padding_1 < padding_2)                         /* tweak-multiple bigger than oe equal to EncryptedSide-multiple. */
        {
-           if(padding_ > padding_2)
-           {
-           
-           }
+           if(padding_ > padding_2)                    /* padding_1 taken as a least count */
+            {
+               
+            }
           else
-          {
+            {
           
-          }
+            }
        }
      else if(padding_1 >= padding_2)                     /* Reverse case; padding_ > padding_2.*/
        {
-          
+        /* padding_2 taken as a least count. */  
        }
    }
