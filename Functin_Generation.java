@@ -19,13 +19,14 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
       }
       count = 0;
       padding1 = (BlockSize - n) % n;
-      for(i = n - padding; i < '\0'; i++)
+      for(i = n - padding1; i < '\0'; i++)
       {
-        key2[count] = EncryptedSide[i];
+        key2[count] = EncryptedSide[i];              /* Last Bits of strings stored. */
         count++;
       }
       for(i = 0; i <= padding1; i++)
       {
-        key1 = '0' + 'key1';                          /* Concatenating with 0's. Now, key1 is multiple of 'n'. */
+        key2 = '0' + 'key2';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
       }
+      
    }
