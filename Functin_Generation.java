@@ -53,7 +53,8 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
    
       count = 0;
       padding2 = strlen(tweak) % n;
-     
+      if(strlen(tweak) > n)
+      {
       for(i = n - padding1; i < '\0'; i++)
       {
         key2[count] = EncryptedSide[i];              /* Last Bits of strings stored. */
@@ -62,5 +63,13 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
       for(i = 0; i <= padding1; i++)
       {
         key2 = '0' + 'key2';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
-      }  
+      }
+      }
+      else
+      {
+        for(i = n - padding2; i < n; i++)
+        {
+          key2 = '0' + key2;
+        }
+      }
    }
