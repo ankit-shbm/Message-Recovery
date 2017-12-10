@@ -23,53 +23,58 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
           }
       else
          {
+             key1 = key;
              for(i = n - padding; i < n; i++)
                 {
-                   key1 = '0' + key;
+                   key1 = '0' + key1;
                 }
          }
    
       count = 0;
-      padding1 = (BlockSize - n) % n;
-      if(strlen(BlockSize - n) > n)
-      {
-      for(i = n - padding1; i < '\0'; i++)
+      padding1 = (BlockSize) % n - 1;
+   
+      if(BlockSize > n + 1)
+        {
+           for(i = BlockSize - n - padding1; i < BlockSize - n; i++)
       {
         key2[count] = EncryptedSide[i];              /* Last Bits of strings stored. */
         count++;
       }
-      for(i = 0; i <= padding1; i++)
+      for(i = 0; i <= n - padding1; i++)
       {
         key2 = '0' + 'key2';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
       }
       } 
       else
       {
+         key1 = EncryptedSide;
         for(i = n - padding1; i < n; i++)
         {
-          key1 = '0' + key;
+          key1 = '0' + key1;
         }
       }
    
       count = 0;
       padding2 = strlen(tweak) % n;
+   
       if(strlen(tweak) > n)
       {
-      for(i = n - padding1; i < '\0'; i++)
+      for(i = strlen(tweak) - padding2; i < strlen(tweak); i++)
       {
-        key2[count] = EncryptedSide[i];              /* Last Bits of strings stored. */
+        key2[count] = tweak[i];              /* Last Bits of strings stored. */
         count++;
       }
-      for(i = 0; i <= padding1; i++)
+      for(i = 0; i < n - padding2; i++)
       {
         key2 = '0' + key2;                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
       }
       }
       else
       {
+         key2 = tweak;
         for(i = n - padding2; i < n; i++)
         {
-          key2 = '0' + ;
+          key2 = '0' + key2;
         }
       }
    }
