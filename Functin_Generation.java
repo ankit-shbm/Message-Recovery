@@ -1,12 +1,14 @@
 /***** Generation of Random Function before XOR with the parsed other side block. *****/
+/* In general, len(key) has the largest bit-length among the len(tweak), len(EncryptedSide) and so on*/
 /* Max. len(PlainText) = 128 Bits. */
 /* Max. len(key) = 128 Bits. */
 
 public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t EncryptedSide, int BlockSize)
    {
-      int i, padding, padding1, padding2;                                  
+      int i, padding, padding_, padding1, padding_1, padding2, padding_2;                                  
       uint64_t key1[n], key2[n];                                /* String store. */
    
+      padding_ = strlen(key) / n;                              /* To know the Multiple of n for Function generation. */
       padding = strlen(key) % n;                               /* Check the length to be padded. */
       if(strlen(key) > n)
           {
@@ -18,7 +20,7 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
                 }
              for(i = 0; i < n - padding; i++)
                 {
-                   key1 = '0' + key1;                          /* Concatenating with 0's. Now, key1 is multiple of 'n'. */
+                   key1 = '0' + key1;                           /* Concatenating with 0's. Now, key1 is multiple of 'n'. */
                 }
           }
       else
@@ -31,8 +33,8 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
          }
    
       count = 0;
-      padding1 = (BlockSize) % n - 1;
-   
+      padding_1 = (BlockSize - n) / n;                          /* To know the Multiple of n for Function generation. */
+      padding1 = (BlockSize - n) % n;  
       if(BlockSize > n + 1)
         {
            for(i = BlockSize - n - padding1; i < BlockSize - n; i++)
@@ -55,13 +57,14 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
          }
    
       count = 0;
+      padding_2 = strlen(tweak) / n;                              /* To know the Multiple of n for Function generation. */
       padding2 = strlen(tweak) % n;
    
       if(strlen(tweak) > n)
         {
            for(i = strlen(tweak) - padding2; i < strlen(tweak); i++)
               {
-                  key2[count] = tweak[i];              /* Last Bits of strings stored. */
+                  key2[count] = tweak[i];                    /* Last Bits of strings stored. */
                   count++;
               }
           for(i = 0; i < n - padding2; i++)
@@ -77,4 +80,7 @@ public class function(uint64_t key, uint64_t tweak, int i, int n, uint64_t Encry
                     key2 = '0' + key2;
                 }
         }
+   
+     int d1, d2;
+     
    }
