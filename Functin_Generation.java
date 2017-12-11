@@ -8,19 +8,21 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
       int i, padding, padding_, padding1, padding_1, padding2, padding_2;                                  
       uint64_t key1[n], key2[n];                                /* String store. */
    
-      padding_ = strlen(key) / n;                              /* To know the Multiple of n for Function generation. */
+   //   padding_ = strlen(key) / n;                              /* To know the Multiple of n for Function generation. */
       padding = strlen(key) % n;                               /* Check the length to be padded. */
       if(strlen(key) > n)
           {
-             for(i = strlen(key) - padding; i < strlen(key); i++)
+        /*   
+         for(i = strlen(key) - padding; i < strlen(key); i++)
                 {
                    static int count = 0;
-                   key1[count] = key[i];                         /* Last Bits of strings stored. */
+                   key1[count] = key[i];                      
                    count++;
                 }
+        */
              for(i = 0; i < n - padding; i++)
                 {
-                   key1 = '0' + key1;                           /* Concatenating with 0's. Now, key1 is multiple of 'n'. */
+                   key = key + '0';                           /* Concatenating with 0's. Now, key1 is multiple of 'n'. */
                 }
           }
       else
@@ -28,23 +30,24 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
              key1 = key;
              for(i = n - padding; i < n; i++)
                 {
-                   key1 = '0' + key1;
+                   key1 = key1 + '0';
                 }
          }
    
       count = 0;
-      padding_1 = (BlockSize - n) / n;                          /* To know the Multiple of n for Function generation. */
+//      padding_1 = (BlockSize - n) / n;                          /* To know the Multiple of n for Function generation. */
       padding1 = (BlockSize - n) % n;  
       if(BlockSize > n + 1)
         {
-           for(i = BlockSize - n - padding1; i < BlockSize - n; i++)
+/*          for(i = BlockSize - n - padding1; i < BlockSize - n; i++)
               {
-                  key2[count] = EncryptedSide[i];              /* Last Bits of strings stored. */
+                  key2[count] = EncryptedSide[i];              
                   count++;
               }
+  */
           for(i = 0; i <= n - padding1; i++)
              {
-                 key2 = '0' + 'key2';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
+                 EncryptedSide = EncryptedSide + '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
              }
        } 
       else
@@ -52,7 +55,7 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
             key1 = EncryptedSide;
             for(i = n - padding1; i < n; i++)
                {
-                  key1 = '0' + key1;
+                  key1 = key1 +  '0';
                }
          }
    
@@ -62,14 +65,15 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
    
       if(strlen(tweak) > n)
         {
-           for(i = strlen(tweak) - padding2; i < strlen(tweak); i++)
+ /*          for(i = strlen(tweak) - padding2; i < strlen(tweak); i++)
               {
-                  key2[count] = tweak[i];                    /* Last Bits of strings stored. */
+                  key2[count] = tweak[i];                    
                   count++;
               }
+*/
           for(i = 0; i < n - padding2; i++)
              {
-                 key2 = '0' + key2;                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
+                 tweak = tweak +  '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
              }
         }
       else
@@ -77,7 +81,7 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
              key2 = tweak;
              for(i = n - padding2; i < n; i++)
                 {
-                    key2 = '0' + key2;
+                    key2 = key2 + '0';
                 }
         }
    
@@ -86,7 +90,7 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
        {
            if(padding_ > padding_2)                    /* padding_1 taken as a least count */
             {
-               
+                         
             }
           else
             {
@@ -97,4 +101,14 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
        {
         /* padding_2 taken as a least count. */  
        }
+   
+      
    }
+
+
+
+
+
+
+
+
