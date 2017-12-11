@@ -85,7 +85,10 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
                 }
         }
    
-     int d1, d2;
+     padding_ = strlen(key);
+     padding_1 = strlen(EncryptedSide);
+     padding_2 = strlen(tweak);
+   
      if(padding_1 < padding_2)                         /* tweak-multiple bigger than oe equal to EncryptedSide-multiple. */
        {
            if(padding_ > padding_2)                    /* padding_1 taken as a least count */
