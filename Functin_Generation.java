@@ -4,79 +4,8 @@
 /* Max. len(key) = 128 Bits. */
 
 public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t EncryptedSide, int BlockSize)
-   {
-      int i, padding, padding_, padding1, padding_1, padding2, padding_2;                                  
-      uint64_t key1[n], key2[n];                                /* String store. */
-   
-      padding_ = strlen(key);                                  
-      padding = padding_ % n;                               /* Check the length to be padded. */
-      if(padding_ > n)
-          {
-        /*   
-         for(i = strlen(key) - padding; i < strlen(key); i++)
-                {
-                   static int count = 0;
-                   key1[count] = key[i];                      
-                   count++;
-                }
-        */
-             for(i = 0; i < n - padding; i++)
-                {
-                   key = key + '0';                           /* Concatenating with 0's. Now, key1 is multiple of 'n'. */
-                }
-          }
-      else
-         {
-             key1 = key;
-             for(i = n - padding; i < n; i++)
-                {
-                   key1 = key1 + '0';
-                }
-         }
-   
-      count = 0;
-      padding_1 = (BlockSize - n);                          
-      padding1 = padding_1 % n;  
-      if(padding_1 > n)
-        {
-/*          for(i = BlockSize - n - padding1; i < BlockSize - n; i++)
-              {
-                  key2[count] = EncryptedSide[i];              
-                  count++;
-              }
-  */
-          for(i = 0; i <= n - padding1; i++)
-             {
-                 EncryptedSide = EncryptedSide + '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
-             }
-       } 
-      else
-         {
-            key1 = EncryptedSide;
-            for(i = n - padding1; i < n; i++)
-               {
-                  key1 = key1 +  '0';
-               }
-         }
-   
-     
-     if(padding_1 < padding_2)                         /* tweak-multiple bigger than or equal to EncryptedSide-multiple. */
-       {
-           if(padding_ > padding_2)                    /* padding_1 taken as a least count */
-            {
-                         
-            }
-          else
-            {
-          
-            }
-       }
-     else if(padding_1 >= padding_2)                     /* Reverse case; padding_ > padding_2.*/
-       {
-        /* padding_2 taken as a least count. */  
-       }
-   
-   /* Key generation. */
+   {   
+   /* Function-Key generation. */
      uint64_t FunctionOut;
      int padding, padding_;
      key = key * k;
@@ -87,7 +16,7 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
      padding_ = strlen(FunctionOut);
      padding = padding_ % n;
    
-      if(padding_ > n)
+     if(padding_ > n)
       {
           for(i = 0; i < n - padding; i++)
              {
