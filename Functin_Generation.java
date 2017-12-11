@@ -59,33 +59,8 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
                }
          }
    
-      count = 0;
-      padding_2 = strlen(tweak);                         
-      padding2 = padding_2 % n;
-   
-      if(padding_2 > n)
-        {
- /*          for(i = strlen(tweak) - padding2; i < strlen(tweak); i++)
-              {
-                  key2[count] = tweak[i];                    
-                  count++;
-              }
-*/
-          for(i = 0; i < n - padding2; i++)
-             {
-                 tweak = tweak +  '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
-             }
-        }
-      else
-         {
-             key2 = tweak;
-             for(i = n - padding2; i < n; i++)
-                {
-                    key2 = key2 + '0';
-                }
-        }
-  
-     if(padding_1 < padding_2)                         /* tweak-multiple bigger than oe equal to EncryptedSide-multiple. */
+     
+     if(padding_1 < padding_2)                         /* tweak-multiple bigger than or equal to EncryptedSide-multiple. */
        {
            if(padding_ > padding_2)                    /* padding_1 taken as a least count */
             {
@@ -101,7 +76,25 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
         /* padding_2 taken as a least count. */  
        }
    
-      
+   /* Key generation. */
+     uint64_t FunctionOut;
+     int padding, padding_;
+     key = key * k;
+     EncryptedSide = EncryptedSide * k;
+     EncryptedSide = strcat(key, EncryptedSide); 
+     FunctionOut = BinaryConversion(EncryptedSide);
+     FunctionOut = strcat(FunctionOut, tweak);
+     padding_ = strlen(FunctionOut);
+     padding = padding_ % n;
+   
+      if(padding_ > n)
+      {
+          for(i = 0; i < n - padding; i++)
+             {
+                 FunctionOut = FunctionOut +  '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
+             }
+      }   
+     FunctionOut = 
    }
 
 
