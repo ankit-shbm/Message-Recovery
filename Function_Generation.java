@@ -5,7 +5,7 @@
 
 public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t EncryptedSide, int BlockSize)
    {   
-   /* Function-Key generation. */
+                                                          /* Function-Key generation. */
      uint64_t FunctionOut;
      int padding, padding_;
      key = key * k;
@@ -23,13 +23,13 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
                  FunctionOut = FunctionOut +  '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
              }
       }   
+   
+     int l;
+     padding_ = strlen(FunctionOut);
+     l = padding_ / n;
+     uint64_t Function[l];
      FunctionOut = 
    }
-
-
-
-
-
 
 
 
