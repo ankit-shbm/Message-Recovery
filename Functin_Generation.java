@@ -8,9 +8,9 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
       int i, padding, padding_, padding1, padding_1, padding2, padding_2;                                  
       uint64_t key1[n], key2[n];                                /* String store. */
    
-   //   padding_ = strlen(key) / n;                              /* To know the Multiple of n for Function generation. */
-      padding = strlen(key) % n;                               /* Check the length to be padded. */
-      if(strlen(key) > n)
+      padding_ = strlen(key);                                  
+      padding = padding_ % n;                               /* Check the length to be padded. */
+      if(padding_ > n)
           {
         /*   
          for(i = strlen(key) - padding; i < strlen(key); i++)
@@ -35,9 +35,9 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
          }
    
       count = 0;
-//      padding_1 = (BlockSize - n) / n;                          /* To know the Multiple of n for Function generation. */
-      padding1 = (BlockSize - n) % n;  
-      if(BlockSize > n + 1)
+      padding_1 = (BlockSize - n);                          
+      padding1 = padding_1 % n;  
+      if(padding_1 > n)
         {
 /*          for(i = BlockSize - n - padding1; i < BlockSize - n; i++)
               {
@@ -60,10 +60,10 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
          }
    
       count = 0;
-      padding_2 = strlen(tweak) / n;                         /* To know the Multiple of n for Function generation. */
-      padding2 = strlen(tweak) % n;
+      padding_2 = strlen(tweak);                         
+      padding2 = padding_2 % n;
    
-      if(strlen(tweak) > n)
+      if(padding_2 > n)
         {
  /*          for(i = strlen(tweak) - padding2; i < strlen(tweak); i++)
               {
@@ -84,11 +84,7 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
                     key2 = key2 + '0';
                 }
         }
-   
-     padding_ = strlen(key);
-     padding_1 = strlen(EncryptedSide);
-     padding_2 = strlen(tweak);
-   
+  
      if(padding_1 < padding_2)                         /* tweak-multiple bigger than oe equal to EncryptedSide-multiple. */
        {
            if(padding_ > padding_2)                    /* padding_1 taken as a least count */
