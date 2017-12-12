@@ -31,14 +31,13 @@ public class String function(String key, String tweak, int k, int n, String Encr
      String Function;
      m = n;
     /* Parsing the Bit-String into multiple of n-length. */
-   while(i < padding_ - m)
+   while(i < padding_ - n)
    {
      for(i = j; i < m; i++)
      {
-        Function[i] = FunctionOut[m + i];
-        
+        Function[i] = XOR(FunctionOut[i], FunctionOut[m + i]);
      }
-      count = count + 2;
+      count = count + 4;
       j = (count - 1) * n;
       m = count * n;
    }
