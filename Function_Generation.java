@@ -5,7 +5,7 @@
 
 public class String function(String key, String tweak, int k, int n, String EncryptedSide, int BlockSize)
    {   
-                                                          /* Function-Key generation. */
+                                                                           /* Function-Key generation. */
      String FunctionOut;
      int padding, padding_;
      key = key * k;
@@ -24,18 +24,26 @@ public class String function(String key, String tweak, int k, int n, String Encr
              }
       }   
    
-     int l, j = 0;
+     int l, count = 0, m;
+     int j = 0;
      padding_ = length(FunctionOut);
      l = padding_ / n;
-     char[] Function;
-     
+     String Function;
+     m = n;
     /* Parsing the Bit-String into multiple of n-length. */
-     for(i = 0; i < padding_; i++)
+   while(i < padding_ - m)
+   {
+     for(i = j; i < m; i++)
      {
+        Function[i] = FunctionOut[m + i];
         
      }
-       
+      count = count + 2;
+      j = (count - 1) * n;
+      m = count * n;
    }
+   
+ }
 
 
 
