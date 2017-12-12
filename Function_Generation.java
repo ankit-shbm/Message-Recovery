@@ -2,6 +2,8 @@
 /* In general, len(key) has the largest bit-length among the len(tweak), len(EncryptedSide) and so on*/
 /* Max. len(PlainText) = 128 Bits. */
 /* Max. len(key) = 128 Bits. */
+/* tweak is an user input at every instance of requirement. */
+/* 'k' is the no. of round the encryption is passing by. */
 
 public class String function(String key, String tweak, int k, int n, String EncryptedSide, int BlockSize)
    {   
