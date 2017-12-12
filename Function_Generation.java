@@ -3,17 +3,17 @@
 /* Max. len(PlainText) = 128 Bits. */
 /* Max. len(key) = 128 Bits. */
 
-public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t EncryptedSide, int BlockSize)
+public class String function(String key, String tweak, int k, int n, String EncryptedSide, int BlockSize)
    {   
                                                           /* Function-Key generation. */
-     uint64_t FunctionOut;
+     String FunctionOut;
      int padding, padding_;
      key = key * k;
      EncryptedSide = EncryptedSide * k;
-     EncryptedSide = strcat(key, EncryptedSide); 
+     EncryptedSide = ("\0", key, EncryptedSide); 
      FunctionOut = BinaryConversion(EncryptedSide);
      FunctionOut = strcat(FunctionOut, tweak);
-     padding_ = strlen(FunctionOut);
+     padding_ = length(FunctionOut);
      padding = padding_ % n;
    
      if(padding_ > n)
@@ -24,11 +24,17 @@ public class function(uint64_t key, uint64_t tweak, int k, int n, uint64_t Encry
              }
       }   
    
-     int l;
-     padding_ = strlen(FunctionOut);
+     int l, j = 0;
+     padding_ = length(FunctionOut);
      l = padding_ / n;
-     uint64_t Function[l];
-     FunctionOut = 
+     char[] Function;
+     
+    /* Parsing the Bit-String into multiple of n-length. */
+     for(i = 0; i < padding_; i++)
+     {
+        
+     }
+       
    }
 
 
