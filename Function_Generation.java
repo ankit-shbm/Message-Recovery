@@ -26,7 +26,6 @@ public class String function(String key, String tweak, int k, int n, String Encr
    
      int l, count = 0, m;
      padding_ = length(FunctionOut);
-     l = padding_ / n;
      String Function;
      m = 2 * n;
     /* Parsing the Bit-String into multiple of n-length. */
@@ -40,11 +39,8 @@ public class String function(String key, String tweak, int k, int n, String Encr
       for(i = m; i < m + n; i++)
       {
         Function[j] = XOR(Function[j], FunctionOut[i]);
-         j++;
+        j++;
       }
       m = m + n;
     }
  }
-
-
-
