@@ -6,20 +6,25 @@
 
 public class char KeyGeneration(char[] key)
 {
-    int i = 0;
-    String[] Key_Generated;
+    static int i = 2;
+    String Key_Generated[] = new String[pow(2, 128)];
     Key_Generated[0] = '0';
     Key_Generated[1] = '1';
-    int count = 1;
-    while(count < 128)
-     {
-        while(count < count + 1)
-        {
-          Key_Generated[i] = strcat('0');
-        }
-        count++;
-     }
+    for(static int j = 0; j < Key_Generated.length; j++)
+    {
+      if(Key_Generated.length < pow(2, 128))
+      {
+        Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);
+        i++;
+        Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);
+        i++;
+      }
+      else
+      {
+          break;
+      }
+    }
 }
-  
-  
-  
+
+
+
