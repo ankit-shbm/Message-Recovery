@@ -4,27 +4,29 @@
 /* 'n' is the length of the string of the key that to be generated. */
 /* For the given set, n = 128 and m = 2. A[m] = {0, 1}. */
 
-public class char KeyGeneration(char[] key)
+public class KeyGeneration
 {
-    static int i = 2;
-    String Key_Generated[] = new String[pow(2, 128)];
-    Key_Generated[0] = '0';
-    Key_Generated[1] = '1';
-    for(static int j = 0; j < Key_Generated.length; j++)
+    public static void main(String args[])
     {
-      if(Key_Generated.length < pow(2, 128))
-      {
-        Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);
-        i++;
-        Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);
-        i++;
-      }
-      else
-      {
-          break;
-      }
-    }
-}
+       static int i = 2;
+       String Key_Generated[] = new String[pow(2, 128)];
+       Key_Generated[0] = '0';
+       Key_Generated[1] = '1';
+       for(static int j = 0; j < Key_Generated.length; j++)
+        {
+           if(Key_Generated.length < pow(2, 128))
+             {
+                Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);
+                i++;
+                Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);
+                i++;
+             }
+           else
+             {
+               break;
+             }
+        }
+ }
 
 
 
