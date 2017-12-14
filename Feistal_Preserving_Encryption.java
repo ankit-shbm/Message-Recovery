@@ -75,6 +75,31 @@ class Simple
      uint64_t key[128];                                                                /* An unique random key from the Generated set. */
      uint64_t tweak[128];                                                              /* An unique random tweak from the Generated set. */
      EncryptedNumber(A, n, key, tweak);
+      int i = 2;
+       String Key_Generated[] = new String[pow(2, 128)];                         /* Max. size allocation of Array.*/
+       Key_Generated[0] = '0';
+       Key_Generated[1] = '1';
+       for(double j = 1; j < Key_Generated.length; j++)                      /* Dynamic allocation of sizeof Key_Generated Array */
+        {
+           if(Key_Generated.length < pow(2, 128))
+             {
+                Key_Generated[i] = cate(Key_Generated[j], Key_Generated[0]);  /* String concatenation with 0's. */
+                i++;
+                Key_Generated[i] = cate(Key_Generated[j], Key_Generated[1]);  /* String concatenation with 1's. */
+                i++;
+             }
+           else
+             {
+               break;
+             }
+        }
+      for(i = 0; i < Key_Generated.length; i++)
+        {
+           while(length(Key_Generated[i] < 128))
+             {
+                 cate( '0', Key_Generated[i]);                                 /* Conversion into 128 bits-string. */
+             }
+        }    
    }
   
 }
