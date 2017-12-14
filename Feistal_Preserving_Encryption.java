@@ -36,10 +36,13 @@ class Simple
      String Function;
      m = 2 * n;
     /* Parsing the Bit-String into multiple of n-length. */
-     for(i = 0; i < n; i++)
-     {
-        Function[i] = XOR(FunctionOut[i], FunctionOut[m + i]);
-     }
+     if(padding > 0)
+      {
+        for(i = 0; i < n; i++)
+          {
+             Function[i] = XOR(FunctionOut[i], FunctionOut[m + i]);
+          }
+      }
     while(i < padding_)
     {
       int j = 0;
