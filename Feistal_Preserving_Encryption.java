@@ -25,13 +25,11 @@ class Simple
      padding_ = length(FunctionOut);
      padding = padding_ % n;
    
-     if(padding_ > n)
-      {
-          for(i = 0; i < n - padding; i++)
-             {
+    
+      for(i = 0; i < n - padding; i++)
+        {
                  FunctionOut = FunctionOut +  '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
-             }
-      }   
+        }  
    
      int l, count = 0, m;
      padding_ = length(FunctionOut);
@@ -54,7 +52,7 @@ class Simple
     }
  }
     
-   /*****  Key Permutation with each i-th round before Function call. *****/
+/*****  Key Permutation with each i-th round before Function call. *****/
 /* 'a' is a large number. */
 /* 'b' is equal to Array_Size. */
 /* main function is ignored. Just function for KeyPermutation is shown. */
