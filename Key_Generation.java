@@ -8,26 +8,26 @@ public class KeyGeneration
 {
     static void pow(int a, int b)
     {
-      double num = 1;
-        for(int i = 0; i <= b; i++)
+      double num = 1;                                                            /* Double for more than 32 bits. */
+        for(int i = 0; i < b; i++)
         {
-          num = num * a;
+          num = num * a;                                                         /* Multiplication of 2 with each round. */
         }
         return num;
     }
     public static void main(String args[])
     {
        static int i = 2;
-       String Key_Generated[] = new String[pow(2, 128)];
+       String Key_Generated[] = new String[pow(2, 128)];                         /* Max. size allocation of Array.*/
        Key_Generated[0] = '0';
        Key_Generated[1] = '1';
-       for(static int j = 0; j < Key_Generated.length; j++)
+       for(static int j = 0; j < Key_Generated.length; j++)                      /* Dynamic allocation of sizeof Key_Generated Array */
         {
            if(Key_Generated.length < pow(2, 128))
              {
-                Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);
+                Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);  /* String concatenation with 0's. */
                 i++;
-                Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);
+                Key_Generated[i] = concate(Key_Generated[j], Key_Generated[0]);  /* String concatenation with 1's. */
                 i++;
              }
            else
