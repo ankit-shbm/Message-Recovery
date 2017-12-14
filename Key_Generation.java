@@ -6,6 +6,15 @@
 
 public class KeyGeneration
 {
+    static void pow(int a, int b)
+    {
+      double num = 1;
+        for(int i = 0; i <= b; i++)
+        {
+          num = num * a;
+        }
+        return num;
+    }
     public static void main(String args[])
     {
        static int i = 2;
