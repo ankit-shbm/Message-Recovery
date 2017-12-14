@@ -1,7 +1,13 @@
-/***** Variation of Padding_, Padding_1 and Padding_2 on different value of n. *****/
+------------------------------------------------------------------------------------
+/***** Variation of Padding, Padding1 and Padding2 on different value of n. *****/
+/* Padding => key.length mod n. */
+/* Padding1 => EncryptedSide.length mod n. */
+/* Padding2 => tweak.length mod n. */
+/* BlockSize is 64-bits for Feistel-1 and Feistel-3. */
+---------------------------------------------------------
 
- n	padding_	padding_1	padding_2	BlockSize	(padding_ - 2*padding_1)
- 
+ n	padding	padding1	padding2	BlockSize	(padding - 2*padding1)
+--------------------------------------------------------------
 1	128	63	-	64	2
 2	64	31	-	64	2
 3	62	20	-	64	22
