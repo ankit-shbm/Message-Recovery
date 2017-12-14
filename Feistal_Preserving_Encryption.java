@@ -2,6 +2,16 @@
 
 class Simple
 {
+    static void pow(int a, int b)
+    {
+      double num = 1;                                                            /* Double for more than 32 bits. */
+        for(int i = 0; i < b; i++)
+        {
+          num = num * a;                                                         /* Multiplication of 2 with each round. */
+        }
+        return num;
+    }
+   
    static String function(String key, String tweak, int k, int n, String EncryptedSide, int BlockSize)
    {   
                                                                            /* Function-Key generation. */
