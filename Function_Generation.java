@@ -18,12 +18,12 @@ public class String function(String key, String tweak, int k, int n, String Encr
      padding_ = length(FunctionOut);
      padding = padding_ % n;
    
-     if(padding_ > n)
+     if(padding > 0)
       {
-          for(i = 0; i < n - padding; i++)
-             {
-                 FunctionOut = FunctionOut +  '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
-             }
+         for(i = 0; i < n - padding; i++)
+           {
+               FunctionOut = FunctionOut +  '0';                         /* Concatenating with 0's. Now, key2 is multiple of 'n'. */
+           }
       }   
    
      int l, count = 0, m;
