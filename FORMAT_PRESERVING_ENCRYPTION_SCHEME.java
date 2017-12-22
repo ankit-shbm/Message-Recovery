@@ -142,8 +142,8 @@ class Simple
                      zero = zero.concat("0");
                   }
                   w = w.concat(zero);
-                  System.out.println(w);
-                  System.out.println(w.length() + "\n");
+//                  System.out.println(w);
+//                  System.out.println(w.length() + "\n");
                 n = "10011010010101111110100000100101110000011111000000111001101100100110110110111011101010111010010110111111111011110000110100001000011";
                 char[] r = n.toCharArray();
                 char[] q = w.toCharArray();
@@ -183,4 +183,85 @@ class Simple
                 }
            }
 // BlockSize Division.------------------------------------------------------------
+    int rem;
+    String p1 = new String(p);
+    zero = "0";
+//    System.out.println(p1);
+    rem = p.length % m.length();
+    if(rem != 0)
+    {
+        for(i = 0; i < m.length() - rem - 1; i++)
+        {
+            zero = zero.concat("0");
+        }
+        p1 = p1.concat(zero); 
+    }
+//    System.out.println(p1);
+    char[] p2 = p1.toCharArray();
+    char[] A = new char[m.length()];
+    System.out.print("\n");
+    int k1 = 0, j1;
+    for(i = k1; i < m.length(); i++)
+      {
+            if(p2[i] == p2[i + m.length()])
+             {
+                A[i] = '0';
+             }
+            else
+            {
+                A[i] = '1';
+            }
+       }
+       for(i = 0; i < m.length(); i++)
+        {
+          System.out.print(A[i]);
+        }
+        System.out.print("\n");
+    k1 = k1 + m.length();
+    while(k1 < p1.length() - 31)
+    {
+        j1 = 0;
+        for(i = k1; i < k1 + m.length(); i++)
+        {
+            if(A[j1] == p2[i + m.length()])
+             {
+                A[j1] = '0';
+                j1++;
+             }
+            else
+            {
+               A[j1] = '1';
+               j1++;
+            }
+        }
+        k1 = k1 + m.length(); 
+        for(i = 0; i < m.length(); i++)
+        {
+          System.out.print(A[i]);
+        }
+        System.out.print("\n");
+    }
+//Exclusive-OR for LeftSideKey:------------------------------------------------------------ 
+for(i = 0; i < m.length(); i++)
+ {
+   System.out.print(o[i]);
+ }
+ System.out.println("");
+ for(i = 0; i < m.length(); i++)
+ {
+     if(o[i] == A[i])
+     {
+         o[i] = '0'; 
+     }
+     else
+     {
+         o[i] = '1';
+     }
+ }
+ for(i = 0; i < m.length(); i++)
+ {
+   System.out.print(o[i]);
+ }
+ System.out.println("");
+
    
