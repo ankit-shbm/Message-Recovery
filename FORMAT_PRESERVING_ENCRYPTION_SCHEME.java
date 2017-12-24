@@ -31,7 +31,10 @@ class Simple
            k2 = k2 - 1;
            int i1;
            int count = 0, count1 = 0;
-//----------------------------------------------------------------------------------
+// PlainText Input.------------------------------------------------- 
+           l = "1011010101111110101011000001010100101001010111011000101011111100101011110010110111011101010101101"; // RightHandSide.
+           m = "1010101011111100101010101011111"; // LeftHandSide.
+//------------------------------------------------------------------ 
            i1 = 8;
            k0 = pow(13, i1);
            k1 = pow(7, i1);
@@ -199,8 +202,7 @@ class Simple
 //------------------------------------------------------------------------------------
 
 // Exclusive-OR Section.------------------------------------------------------------
-           l = "1011010101111110101011000001010100101001010111011000101011111100101011110010110111011101010101101"; // RightHandSide.
-           m = "1010101011111100101010101011111"; // LeftHandSide.
+           String zero = new String("0");
            char[] o = m.toCharArray();          //  LeftHandSide.
            char b4 = o[3];
 //           System.out.println(b4);
@@ -301,8 +303,8 @@ class Simple
     char[] p2 = p1.toCharArray();
     char[] A = new char[m.length()];
     System.out.print("\n");
-    int k1 = 0, j1;
-    for(i = k1; i < m.length(); i++)
+    int k00 = 0, j1;
+    for(i = k00; i < m.length(); i++)
       {
             if(p2[i] == p2[i + m.length()])
              {
@@ -318,11 +320,11 @@ class Simple
           System.out.print(A[i]);
         }
         System.out.print("\n");
-    k1 = k1 + m.length();
-    while(k1 < p1.length() - 31)
+    k00 = k00 + m.length();
+    while(k00 < p1.length() - 31)
     {
         j1 = 0;
-        for(i = k1; i < k1 + m.length(); i++)
+        for(i = k00; i < k00 + m.length(); i++)
         {
             if(A[j1] == p2[i + m.length()])
              {
@@ -335,7 +337,7 @@ class Simple
                j1++;
             }
         }
-        k1 = k1 + m.length(); 
+        k00 = k00 + m.length(); 
         for(i = 0; i < m.length(); i++)
         {
           System.out.print(A[i]);
@@ -343,26 +345,26 @@ class Simple
         System.out.print("\n");
     }
 //Exclusive-OR for LeftSideKey:------------------------------------------------------------ 
-for(i = 0; i < m.length(); i++)
- {
-   System.out.print(o[i]);
- }
- System.out.println("");
- for(i = 0; i < m.length(); i++)
- {
-     if(o[i] == A[i])
+    for(i = 0; i < m.length(); i++)
      {
-         o[i] = '0'; 
+        System.out.print(o[i]);
      }
-     else
+    System.out.println("");
+    for(i = 0; i < m.length(); i++)
      {
-         o[i] = '1';
+       if(o[i] == A[i])
+        {
+           o[i] = '0'; 
+        }
+       else
+        {
+           o[i] = '1';
+        }
      }
- }
 // for(i = 0; i < m.length(); i++)
-  {
-//   System.out.print(o[i]);
-  }
+    {
+//    System.out.print(o[i]);
+    }
    
- }
+  }
 }
