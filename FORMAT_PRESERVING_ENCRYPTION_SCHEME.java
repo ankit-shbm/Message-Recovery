@@ -1,5 +1,6 @@
 /***** Java is the Heart of Networking. *****/
 
+
 import java.io.*;
 import java.util.*;
 
@@ -35,7 +36,7 @@ class Simple
            l = "1011010101111110101011000001010100101001010111011000101011111100101011110010110111011101010101101"; // RightHandSide.
            m = "1010101011111100101010101011111"; // LeftHandSide.
 //------------------------------------------------------------------ 
-           i1 = 8;
+           i1 = 1;
            k0 = pow(13, i1);
            k1 = pow(7, i1);
            k3 = pow(11, i1);
@@ -198,11 +199,11 @@ class Simple
 //         System.out.println(w.length() + " ");
 //----------------------------------------------------------------------------------
           i1++;
-        }
 //------------------------------------------------------------------------------------
 
 // Exclusive-OR Section.------------------------------------------------------------
-           String zero = new String("0");
+
+//           String zero = new String("0");
            char[] o = m.toCharArray();          //  LeftHandSide.
            char b4 = o[3];
 //           System.out.println(b4);
@@ -365,6 +366,10 @@ class Simple
     {
 //    System.out.print(o[i]);
     }
-   
+    m = l;
+    System.out.println(m);
+    l = o.toString();
+    System.out.println(l);
+   }
   }
 }
