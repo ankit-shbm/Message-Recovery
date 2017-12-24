@@ -368,7 +368,7 @@ class Simple
             }
             m = l;
             System.out.println(m);
-            l = o.toString();
+            l = new String(o);
             System.out.println(l);
         }
     }
