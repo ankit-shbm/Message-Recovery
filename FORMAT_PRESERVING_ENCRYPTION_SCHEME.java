@@ -1,4 +1,4 @@
-/****** Java is the Heart of Networking. *****/
+/***** Java is the Heart of Networking. *****/
 
 import java.io.*;
 import java.util.*;
@@ -17,40 +17,95 @@ class Simple
 
     public static void main(String[] args)
       { 
-//         double j = 0;
            int i, max;
-           double k = 0;
+           double k0, k1, k3, k4;
            String w = new String();
            String x = new String();
            String y = new String();
            String z = new String();
-//              double count = 0;
-//              System.out.println(pow(2, 128));
-//              for(double i = 0; i < pow(2, 128) + 1; i++)
-//                {
            String l = new String();
            String m = new String();
            String n = new String();
+           double k2;
+           k2 = pow(2, 31); 
+           k2 = k2 - 1;
+           int i1;
+           int count = 0, count1 = 0;
+//----------------------------------------------------------------------------------
+           i1 = 8;
+           k0 = pow(13, i1);
+           k1 = pow(7, i1);
+           k3 = pow(11, i1);
+           k4 = pow(5, i1);
+//------------------------------------------------------------           
+        while(count < pow(2, 2) + 1)
+        {
+          count++;
+          System.out.println("\n" + count);
+//---------------------------------------------------------------------------------- 
+          if(k0 < k2 && count1 == 0)
+           {
+             k0 = pow(13, i1);
+//             System.out.println(k0 + " ");
+             if(k0 > k2)
+             {
+                k0 = k0 % k2;
+//                System.out.println(k0 + " ");
+                count1++;
+//                System.out.println(count1 + " ");
+             }
+           }
+          else
+           {
+//              System.out.println("2");
+              k0 = k0 * 13;
+              k0 = k0 % k2;
+//              System.out.println(k0 + " ");
+           }
+//----------------------------------------------------------------------------------          
+//           if(new String(k0) == "NaN" )
+           {
+//              System.out.println("YES");
+           }
+//           System.out.print(k0 + " ");
+           l = Integer.toBinaryString((int)k0);
+           System.out.print(l + " "); 
            
-//              int ko;
-//              j = 80 + i;
-           k = pow(13, 1);
-           l = Integer.toBinaryString((int)k);
-//           System.out.print(l + " "); 
+           
 //           System.out.println(l.length());
            String zero1 = new String("0");
            while(l.length() < 32)
             {
                 l = zero1.concat(l);
-//                System.out.print(l + " "); 
+//                System.out.println(l + " "); 
 //                System.out.println(l.length());
             }
-//            System.out.println(l + " ");
-            w = l;
+           System.out.println(l + " ");
+//           System.out.println(l.length());
+           w = l;
 // Next Section.------------------------------------------------------------
-           k = pow(7, 1);
-           l = Integer.toBinaryString((int)k);
-//           System.out.print(l + " "); 
+          if(k1 < k2 && count1 == 0)
+           {
+              k1 = pow(7, i1);
+//             System.out.println(k1 + " ");
+              if(k1 > k2)
+               {
+                 k1 = k1 % k2;
+//                System.out.println(k1 + " ");
+                 count1++;
+//                System.out.println(count1 + " ");
+               }
+           }
+          else
+           {
+//              System.out.println("2");
+              k1 = k1 * 7;
+              k1 = k1 % k2;
+//              System.out.println(k1 + " ");
+           }
+//----------------------------------------------------------------------------------          
+           l = Integer.toBinaryString((int)k1);
+           System.out.print(l + " "); 
 //           System.out.println(l.length());
            String zero2 = new String("0");
            while(l.length() < 32)
@@ -59,36 +114,76 @@ class Simple
 //                System.out.print(l + " "); 
 //                System.out.println(l.length());
             }
-//           System.out.println(l + " ");
+           System.out.println(l + " ");
+//         System.out.println(w.length() + " ");           
            x = l;
 // Next Section.------------------------------------------------------------
-           k = pow(11, 1);
-           l = Integer.toBinaryString((int)k);
-//           System.out.print(l + " "); 
+         if(k3 < k2 && count1 == 0)
+          {
+             k3 = pow(11, i1);
+//             System.out.println(k3 + " ");
+             if(k3 > k2)
+              {
+                k3 = k3 % k2;
+//                System.out.println(k3 + " ");
+                count1++;
+//                System.out.println(count1 + " ");
+              }
+          }
+         else
+          {
+//              System.out.println("2");
+             k3 = k3 * 11;
+             k3 = k3 % k2;
+//              System.out.println(k3 + " ");
+          }
+//----------------------------------------------------------------------------------          
+          l = Integer.toBinaryString((int)k3);
+          System.out.print(l + " "); 
 //           System.out.println(l.length());
-           String zero3 = new String("0");
-           while(l.length() < 32)
+          String zero3 = new String("0");
+          while(l.length() < 32)
             {
                 l = zero3.concat(l);
 //                System.out.print(l + " "); 
 //                System.out.println(l.length());
             }
-//            System.out.println(l + " ");
-            y = l;
+          System.out.println(l + " ");
+//         System.out.println(l.length() + " ");            
+          y = l;
+            
 // Next Section.------------------------------------------------------------
-           k = pow(5, 1);
-//           j = pow(2,(int)j) % (k + 1);
-           l = Integer.toBinaryString((int)k);
-//              ko = Integer.parseInt(l,2);
-//              System.out.println(ko);              
-//           System.out.print(l + " "); 
+          if(k4 < k2 && count1 == 0)
+           {
+               k4 = pow(5, i1);
+//               System.out.println(k4 + " ");
+               if(k4 > k2)
+                {
+                   k4 = k4 % k2;
+//                  System.out.println(k4 + " ");
+                   count1++;
+//                  System.out.println(count1 + " ");
+                }
+           }
+          else
+            {
+//               System.out.println("2");
+               k4 = k4 * 5;
+               k4 = k4 % k2;
+//               System.out.println(k4 + " ");
+            }
+//----------------------------------------------------------------------------------
+           l = Integer.toBinaryString((int)k4);
+           System.out.print(l + " "); 
 //           System.out.println(l.length());
            String zero = new String("0");
            while(l.length() < 32)
             {
                 l = zero.concat(l);
-            };
-            z = l;
+            }; 
+           System.out.println(l + " "); 
+//         System.out.println(l.length() + " ");
+           z = l;
             
 // Next Section.------------------------------------------------------------
            w = w.concat(x);
@@ -96,7 +191,13 @@ class Simple
            w = w.concat(y);
 //           System.out.println(w + " ");
            w = w.concat(z);
-//         System.out.println(w + " ");
+          System.out.println(w + " ");
+//         System.out.println(w.length() + " ");
+//----------------------------------------------------------------------------------
+          i1++;
+        }
+//------------------------------------------------------------------------------------
+
 // Exclusive-OR Section.------------------------------------------------------------
            l = "1011010101111110101011000001010100101001010111011000101011111100101011110010110111011101010101101"; // RightHandSide.
            m = "1010101011111100101010101011111"; // LeftHandSide.
@@ -128,7 +229,7 @@ class Simple
                 char[] q = w.toCharArray();
                 char[] p = l.toCharArray();
             }
-           else /* if(b4 == '1') */
+           else  
             {
                 max = 131;
                 for(i = 0; i < max - l.length() -1; i++)
@@ -258,10 +359,10 @@ for(i = 0; i < m.length(); i++)
          o[i] = '1';
      }
  }
- for(i = 0; i < m.length(); i++)
- {
-   System.out.print(o[i]);
- }
- System.out.println("");
-
+// for(i = 0; i < m.length(); i++)
+  {
+//   System.out.print(o[i]);
+  }
    
+ }
+}
